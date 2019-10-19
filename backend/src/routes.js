@@ -10,6 +10,7 @@ const upload = multer(uploadConfig);
 
 
 routes.post('/sessions', SessionController.store);
+routes.get('/missions', MissionController.index);
 routes.post('/missions',upload.single('picture'), MissionController.store);
 
 

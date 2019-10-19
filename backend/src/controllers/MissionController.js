@@ -5,11 +5,11 @@ module.exports = {
     console.log(req.body);
     console.log(req.file)
     const { reward, type, city, neighborhood, street, descriptionOption } = req.body;
-    const {filename} = req.file 
+    const { filename } = req.file
 
     mission = await Mission.create({
       reward,
-      picture : filename,
+      picture: filename,
       type,
       city,
       neighborhood,
@@ -20,5 +20,11 @@ module.exports = {
 
     return res.json(mission)
 
-  }
+  },
+
+  async index(req, res) {
+    const missions = await Mission.find().sort('-createdAt');
+
+    return res.json(missions);
+},
 }
