@@ -7,11 +7,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Dashboard from './src/pages/Dashboard'
 import Report from './src/pages/Report'
 import Rewards from './src/pages/Rewards'
+import Mission from './src/pages/Mission'
 
 const TabNavigator = createBottomTabNavigator({
-  Missões: { screen: Dashboard },
-  Reportar: { screen: Report },
-  Recompensas: { screen: Rewards },
+  Missões: Dashboard,
+  Reportar: Report,
+  Recompensas: Rewards,
 }, {
   defaultNavigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused, horizontal, tintColor }) => {
@@ -27,6 +28,7 @@ const TabNavigator = createBottomTabNavigator({
       } else if (routeName === 'Recompensas') {
         iconName = `star`;
       }
+
       // You can return any component that you like here!
       return <IconComponent name={iconName} size={25} color={tintColor} />;
     },
@@ -37,9 +39,12 @@ const TabNavigator = createBottomTabNavigator({
   },
 });
 
+const AppNavigator = createStackNavigator({
+  Home: { screen: TabNavigator, navigationOptions: { header: null } },
+  Mission: Mission
+});
 
 
 
-export default createAppContainer(TabNavigator);
 
-
+export default createAppContainer(AppNavigator);
