@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
-export default function Login({ history }) {
+export default function Register({ history }) {
   const [username, setUsername] = useState('');
+  const [type, setType] = useState('');
 
   async function handleSubmit(event) {
     event.preventDefault();
 
-    const response = await api.post('/sessions', { username, points: 10 });
+    const response = await api.post('/sessions', { username, type, points: 10 });
 
     const { _id } = response.data;
 
@@ -22,7 +23,7 @@ export default function Login({ history }) {
         <div className="content">
 
           <h2 style={{ textAlign: 'center' }}>
-            <b>Login</b>
+            <b>Registrar</b>
           </h2>
 
           <form onSubmit={handleSubmit}>
@@ -34,11 +35,19 @@ export default function Login({ history }) {
               value={username}
               onChange={event => setUsername(event.target.value)}
             />
-            <button className="btn" type="submit">Entrar</button>
+            <label htmlFor="username">Você é um:</label>
+            <select onChange={event => setType(event.target.value)} style={{ height: 45, borderRadius: 0, border: 0, marginBottom: 20 }}>
+              <option value="hero">Hero</option>
+              <option value="helper">Helper</option>
+              <option value="supporter">Supporter</option>
+            </select>
+
+
+            <button className="btn" type="submit">Registrar-se</button>
           </form>
 
         </div>
-        <p>Não tem Login? <a href="/register"> Registrar-se</a> </p>
+
       </div>
     </>
 

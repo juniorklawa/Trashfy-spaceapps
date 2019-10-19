@@ -1,39 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  box-sizing: border-box;
-}
 
-html, body, #root {
-  min-height: 100%;
-}
+
 
 body {
-  background: #000 url('./assets/background.jpg') no-repeat;
+  background: #F7FFC6  no-repeat;
   background-size: cover;
   -webkit-font-smoothing: antialiased !important;
 }
 
 body, input, button {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: 'Baloo', Arial, Helvetica, sans-serif;
   font-size: 14px;
 }
 
 .container {
   margin: 80px auto 0;
-  max-width: 450px;
+  max-width: 250px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #fdfdfdfd;
 }
 
 .content {
-  width: 100%;
-  background: #FFF;
+  width: 40%;
+  background: #fdfdfdfd;
   margin-top: 50px;
   border-radius: 4px;
   padding: 30px;
@@ -80,11 +72,11 @@ body, input, button {
   padding: 0 20px;
   font-size: 16px;
   font-weight: bold;
-  background: #f05a5b;
+  background: #388e3c;
   color: #fff;
   cursor: pointer;
 }
 
 .content button.btn:hover {
-  background: #e14f50;
+  background: #307934;
 }
