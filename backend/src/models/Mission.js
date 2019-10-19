@@ -7,8 +7,7 @@ const MissionSchema = new mongoose.Schema({
   city: String,
   neighborhood: String,
   street: String,
-  establishmentName: String,
-  description: String,
+  descriptionOption: String,
 });
 
 

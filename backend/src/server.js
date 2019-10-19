@@ -12,7 +12,7 @@ const app = express();
 const server = http.Server(app);
 const io = socketio(server);
 
-mongoose.connect('mongodb+srv://juniorklawa:spaceapps@my-cluster-jxelo.mongodb.net/testwto?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://juniorklawa:spaceapps@my-cluster-jxelo.mongodb.net/trashfy?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })

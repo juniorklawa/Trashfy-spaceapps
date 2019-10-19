@@ -4,7 +4,6 @@ module.exports = {
   async store(req, res) {
     console.log(req.body);
     console.log(req.file)
-    const { filename } = req.file;
     const { username, points, type } = req.body;
 
 
@@ -14,7 +13,6 @@ module.exports = {
       user = await User.create({
         username,
         points,
-        profilePicture: filename,
         type: type
       })
 
