@@ -1,5 +1,6 @@
 # Trashfy-spaceapps
 App developed at 8th NASA Space Apps Hackaton Curitiba. Winner of Boticário category
+![](https://ibin.co/4zNznQ2UDhDo.gif)
 
 ## Getting started
 ### `yarn add`
