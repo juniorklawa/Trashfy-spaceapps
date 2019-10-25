@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* spaceappsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* spaceappsTests.m */; };
 		01A77CE7AFE8418ABD42D6D8 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5128BC684B34D7D9641BDD0 /* Foundation.ttf */; };

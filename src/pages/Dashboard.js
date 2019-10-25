@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import SafeAreaView from 'react-native-safe-area-view';
+import MissionCard from '../components/MissionCard'
 
 
 class Dashboard extends React.Component {
@@ -135,38 +136,7 @@ class Dashboard extends React.Component {
             limpando resíduos das missões marcadas pelo Helper
             </Text>
             {this.state.missions.map((mission, i) => (
-              <View
-                key={i}
-                style={styles.projectContainer}>
-                <View style={{ flexDirection: 'row' }}>
-                  <View style={{}}>
-                    <Image
-                      style={{ width: 100, height: 100, resizeMode: 'cover' }}
-                      source={mission.picture}
-                    />
-                  </View>
-                  <View style={{ flex: 3, marginLeft: 10 }}>
-                    <Text style={styles.missionTitle}>{mission.title}</Text>
-                    <Text style={styles.missionDate}>{mission.date}</Text>
-                    <Text>{mission.city}</Text>
-                    <Text>{mission.street}</Text>
-                  </View>
-                  <View style={{ flex: 2, justifyContent: 'center' }}>
-                    <Text style={{ textAlign: 'center' }}>{mission.reco}</Text>
-                    <Text style={{ textAlign: 'center', fontWeight: 'bold' }}>{mission.reward}</Text>
-                  </View>
-                </View>
-                <View style={{ marginTop: 20 }}>
-                  <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate('Mission', { mission: mission })}
-                    style={{ backgroundColor: '#1B8161', height: 40, borderRadius: 5, justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }} color="#1B8161">
-                    <Text style={{ color: '#fff', fontWeight: 'bold', }}>
-                      SER UM HERO
-                    </Text>
-                    <Icon style={{ marginLeft: 8 }} name={'bolt'} size={20} color={'#ffff00'} />
-                  </TouchableOpacity>
-                </View>
-              </View>
+              <MissionCard mission={mission} i={i}></MissionCard>
             ))}
           </ScrollView>
         </View>
